@@ -2,6 +2,9 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
+import AudioRecorder from '../components/AudioRecorder';
+
+
 const Notes = () => {
     const [notes, setNotes] = useState([]);
     const [title, setTitle] = useState('');
@@ -43,6 +46,7 @@ const Notes = () => {
                     </li>
                 ))}
             </ul>
+            <AudioRecorder onSave={(audioBlob) => console.log('Audio saved', audioBlob)} />
         </div>
     );
 };
